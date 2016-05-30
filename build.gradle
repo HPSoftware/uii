@@ -1,0 +1,28 @@
+group 'com.hpe.sw.cms'
+version '0.0.1-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+mainClassName = "com.hpe.sw.cms.verticle.Boot"
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile "io.vertx:vertx-web:3.2.1"
+//  compile 'io.vertx:vertx-redis-client:3.2.1'
+  compile 'io.vertx:vertx-mongo-client:3.2.1'
+  compile 'org.slf4j:slf4j-api:1.7.19'
+  compile 'commons-io:commons-io:2.4'
+  testCompile group: 'junit', name: 'junit', version: '4.11'
+  runtime 'org.slf4j:slf4j-log4j12:1.7.19'
+  runtime 'org.slf4j:jul-to-slf4j:1.7.19'
+//  runtime 'org.apache.commons:commons-lang3:3.4'
+}
+
